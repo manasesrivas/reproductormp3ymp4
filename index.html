@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>reproductor</title>
+</head>
+<body>
+    <main>
+       
+
+        <section class="container">
+            <section class="columns">
+
+                <section class="reproduccion">
+                    <div class="containerdiscoPlayList">
+                        <picture class="discoContainer">
+                            <img src="./css/images/ethan-judd-yVKGWunM960-unsplash.jpg" alt="" class="disco">
+                        </picture>
+                        <div class="playList">
+                            <img src="./css/images/videos.svg" alt="">
+                        </div>
+                    </div>
+                
+
+                    <h2 id="name"></h2>
+
+
+                    <audio id="audio"> 
+                        
+                        <source  class="mixer"  src="" type="audio/mpeg">
+                    </audio>
+
+                    <div class="barraAreaAnterior">
+
+                        <div class="barraArea">
+                            <div class="barra">
+                                
+                            </div>
+                        </div>
+                        <div class="tiempoArea">
+                            <span class="current"></span>
+                            <span class="duracion" ></span>
+                        </div>
+                    </div>
+            
+                    <!-- src, controls, autoplay, loop, preload="none, metadata, auto",  -->
+
+
+                    <div class="controls">
+
+                        <div class="after" id="after">
+                            <img src="./css/images/after.svg" alt="" class="img">
+                        </div>
+
+                        <div class="after best--" >
+                            <img src="./css/images/play.svg" class="img best--" id="play"> </img>
+                        </div>
+                        
+                        <div class="after" id="next">
+                            <img src="./css/images/next.svg" alt="" class="img">
+                        </div>
+                    </div>
+                    
+                </section>
+                
+                <section class="containerVideosAll">
+                    <div class="reproduccion">
+                        <div class="video">
+                            
+                            <video controls >
+                                <source src="./videos/Kiss - I Was Made For Lovin You.mp4" type="video/mp4"/>
+                            </video>
+                            
+                            <div class="playList">
+                                <img src="./css/images/music.svg" alt="">
+                            </div>
+                            
+                        </div>
+                        <div class="containerScroll">
+                            <video   class="videos video-1">
+                                <source src="./videos/Kiss - I Was Made For Lovin You.mp4" type="video/mp4"/>
+                            </video>
+                            <video   class="videos video-2">
+                                <source src="./videos/Kiss - I Was Made For Lovin You.mp4" type="video/mp4"/>
+                            </video>
+                            <video  class="videos video-3" >
+                                <source src="./videos/Kiss - I Was Made For Lovin You.mp4" type="video/mp4"/>
+                            </video>
+                            <video class="videos video-4">
+                                <source src="./videos/Kiss - I Was Made For Lovin You.mp4" type="video/mp4"/>
+                            </video>
+                            
+                            
+                        </div>
+
+
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
+    <script src="./js/main.js"></script>
+
+</body>
+</html>

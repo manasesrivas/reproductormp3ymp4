@@ -1,0 +1,272 @@
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background: url("./images/james-stamler-k3heD_KwH0A-unsplash.jpg"), transparent;
+    backdrop-filter: blur(4px);
+    filter: contrast(100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display:grid;
+    place-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+
+
+
+.container{
+    height: 500px;
+    width: 400px;
+    max-width: 700px;
+    min-width: 200px;
+    background-color: rgb(247,217,23);
+    border-radius: 20px;
+    opacity: 0;
+    overflow: hidden;
+
+}
+
+.columns{
+    width: 800px;
+    display: grid;
+    grid-auto-flow: column;
+    transition: transform 1s ease-in-out;
+}
+
+
+
+
+.reproduccion{
+    width: 400px;
+    height: 100%;
+    position: relative;
+    display: grid;
+    justify-items: center;
+
+}
+
+
+.containerdiscoPlayList{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.discoContainer{
+    height: 200px;
+    display:flex;
+    align-items: center;
+}
+
+.playList{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
+    right: 10px;
+}
+
+.playList img{
+    cursor:pointer;
+}
+
+.disco{
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    align-items: center;
+    box-shadow: 5px 5px 5px rgb(199, 174, 11),  -3px -3px 5px rgb(255, 247, 0);
+}
+
+
+.girar{
+    animation-name: girar;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    display: inline-block;
+}
+
+@keyframes girar{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+#name{
+    margin:0;  
+    height: 20px; 
+}
+
+#audio{
+    border-radius: 50px; 
+    box-shadow: 5px 5px 5px rgb(199, 174, 11), -3px -3px 5px rgb(255, 247, 0);
+
+}
+
+.after{
+    background: none;
+    border: none;
+    height: 50px;
+    width: 50px;
+}
+
+
+.img{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    border-radius: 100%;
+    box-shadow: 5px 5px 5px rgb(199, 174, 11), -3px -3px 5px rgb(255, 247, 0);
+}
+
+.best-- {
+    height: 60px;
+    width: 60px;
+}
+
+.img:active{
+    box-shadow: 5px 5px 5px  rgb(199, 174, 11) inset ;
+}
+
+.barraAreaAnterior{
+    width: 350px;
+    height: 30px;
+}
+
+.barraArea{
+    height: 6px;
+    width: 100%;
+    background-color: beige;
+    border-radius: 50px;
+    cursor:pointer;
+}
+.tiempoArea{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+
+
+
+
+
+.barraArea .barra{
+    height: inherit;
+    width:0;
+    position:relative;
+    border-radius: inherit;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+.barra::before{
+    content:"";
+    position:absolute;
+    height: 12px;
+    width:12px;
+    background: black;
+    border-radius: inherit;
+    top:50%;
+    right: -5px;
+    transform: translateY(-50%);
+    background: inherit;
+    opacity: 0;
+}
+
+.barraArea:hover .barra::before{
+    opacity: 1;
+    transition: opacity 0.1s ease;
+}
+
+.controls{
+    height: 80px;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    
+}
+
+.containerVideosAll{
+    height: 500px;
+    width: 400px;
+    position: relative;
+    background-color: rgb(255, 7, 7);
+    display: flex;
+    justify-content: space-around;
+}
+
+.containerVideo{
+    height: 250px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.video{
+    height: 280px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video{
+    height:200px;
+    width: 300px;
+}
+
+
+.containerScroll{
+    height: 200px;
+    width: 100%;
+}
+
+.videos{
+    height: 60px;
+    width: 100px;
+}
+
+
+
+
+
+
+/* ##################################################################################### */
+
+
+/* efectos */
+
+.mostrarSection{
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+}
+
+
+/* transladar */
+
+.trasladar{
+    transform: translate(-50%);
+}
+
+/* ########################################################################################## */
+
+
+
