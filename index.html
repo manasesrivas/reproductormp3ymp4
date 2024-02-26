@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>replay</title>
+</head>
+<body>
+    <main>
+        <div class="overlay">
+            <div class="container">
+                <div class="container-poster-img illustration">
+                    <img src="" alt="" class="poster-img">
+                </div>
+                <div class="column widgets">
+                    <div class="content-info illustration">
+                        <div class="container-data-audio">
+                            <h2 class="title"></h2>
+                            <p class="author"></p>
+                        </div>
+                        <img class="play-list-img imagen-size button-controls" src="./img/playList.svg" alt="" data-action="playList">
+                    </div>
+                    <div>
+                        <div class="width-current-time illustration">
+                            <div class="space-area-range-audio">
+                                <div class="area-range-audio">
+                                    <div class="range-audio"></div>
+                                </div>
+                            </div>
+                            <div class="tiempoArea">
+                                <p class="current"></p>
+                                <p class="duration"></p>
+                            </div>
+                        </div>
+                    </div>                
+    
+                    <div class="container-controls illustration">
+                        <img src="./img/shuffle.svg" alt="" id="shuffle" class="imagen-size button-controls" data-action="random">
+                        <div class="before-play-after">
+                            <img class="imagen-size button-controls" src="./img/before.svg" alt="" data-action="previous">
+                            <img class="imagen-size button-controls play" src="./img/play.svg" alt=""  data-action="play">
+                            <img  class="imagen-size button-controls" src="./img/after.svg" alt="" data-action="next">
+                        </div>
+                        <img src="./img/noRepeat.svg" id="repeat" alt="" class="imagen-size button-controls" data-action="repeat">
+                    </div>  
+                    <div class="modal">
+                        <div class="bar_playList">
+                            <h4 class="PlayList">Play List</h4>
+                            <img src="./img/x.svg" alt="" class="x button-controls" data-action="quitarModal">
+                        </div>
+                        <div class="modal-container">
+
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <audio src="" id="audio" style="display: none;"></audio>
+</body>
+<script src="./js/main.js"></script>
+</html>

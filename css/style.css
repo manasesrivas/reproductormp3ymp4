@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    display: grid;
+}
+
+.overlay{
+    margin: auto;
+    height: 80%;
+    width: 80%;
+    max-height: 800px;
+    max-width: 1300px;
+    display: grid;
+}
+
+.container{
+    background:linear-gradient(45deg, rgba(8, 8, 8, 0.73), rgba(0, 0, 0, 0.953));
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
+    gap: 30px;
+    position: relative;
+}
+
+.container-poster-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(15%);
+    opacity: 0;
+    transition: transform .5s ease-in, opacity .3s linear;
+
+}
+
+.poster-img{
+    object-fit: cover;
+    width: 60%;
+    aspect-ratio: 2/2;
+    border-radius: 20px;
+    transition: box-shadow .1s, transform .1s;
+    box-shadow: 0 0 50px rgb(0, 0, 0);
+}
+
+@keyframes playingMusic {
+    0%{
+        transform: scale(1)
+    }
+    100%{
+        transform: scale(101%)
+    }
+}
+
+
+
+
+.column{
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.content-info{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    transform: translateY(15%);
+    opacity: 0;
+    transition: transform .5s ease-in, opacity .3s linear;
+}
+
+.container-data-audio{
+    opacity: 1;
+    transition: transform 1s, opacity 1s;
+}
+
+.title{
+    font-size: 2rem;
+}
+
+.author{
+    color: rgb(186, 186, 186)
+}
+
+
+.imagen-size{
+    width: 5vh;
+    cursor: pointer;
+}
+
+.width-current-time{
+    width: 100%;
+    transform: translateY(15%);
+    opacity: 0;
+    transition: transform .5s ease-in, opacity .3s linear;
+}
+.space-area-range-audio{
+    height: 5px; 
+    margin: 2px 0;   
+}
+
+.area-range-audio{
+    height: 6px;
+    width: 100%;
+    background-color: rgba(84, 84, 84, 0.677);
+    border-radius: 50px;
+    cursor:pointer;
+}
+
+.area-range-audio:hover{
+    height: 8px;
+}
+
+.range-audio{
+    position: relative;
+    height: inherit;
+    width: 0;
+    border-radius: inherit;
+    background-color: rgb(136, 31, 31);
+    transition: all 100ms linear;
+}
+
+.range-audio::before{
+    content: "";
+    position: absolute;
+    height: 17px;
+    width: 17px;
+    background: rgb(229, 229, 229);
+    border-radius: inherit;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    opacity: 0;
+
+}
+
+.area-range-audio:hover .range-audio::before{
+    opacity: 1;
+    transition: opacity 100ms ease-in-out;
+}
+
+
+.tiempoArea{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-controls{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(15%);
+    opacity: 0;
+    transition: transform .5s ease-in, opacity .3s linear;
+
+}
+
+
+.modal{
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(15px);
+    transform: scale(0);
+    transition: transform 2s linear, opacity .8s linear;
+    transform-origin: top right;
+    animation: quitarModal .5s linear;
+    background: rgba(23, 23, 23, 0.76);
+    box-shadow: rgba(0, 0, 0, 0.728) 0 0 40px;
+
+
+
+    top: 50%;
+    right: 50%;
+    translate: 50% -50%;
+
+    box-shadow: 0 0 40px 40px rgba(82, 82, 82, 0.265);
+
+}
+
+.bar_playList{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.PlayList{
+    padding: 10px;
+    font-size: 2rem;
+}
+
+.x{
+    width: 3rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.modal-container{
+    padding-top: 20px;
+    height: 70%;
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+}
+
+.modal-container::-webkit-scrollbar{
+    display: none;
+}
+
+.sound{
+    border-bottom: 1px rgba(255, 255, 255, 0.534) solid;
+    width: 80%;
+    padding: 2% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: scale .2s ease, opacity .2s ease;
+}
+
+.sound:hover{
+    opacity: 1;
+    scale: 1.1;
+    cursor: pointer;
+}
+
+.modal-container:hover > .sound:not(:hover){
+    opacity: 0.4;
+}
+
+.img-title-play-list{
+    display: flex;
+    gap: 15px;
+    z-index: -1;
+}
+
+.img-play-list{
+    width: 5vh;
+    border-radius: 5px;
+}
+
+.title-play-list{
+    font-size: 1rem;
+}
+.author-play-list{
+    font-size: 0.8rem;
+    color: rgb(204, 204, 204);
+}
+
+.before-play-after{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.quitar{
+    opacity: 0;
+}
+
+.playing{
+    pointer-events: none;
+    background-color: rgba(250, 250, 250, 0.157);
+    margin: 10px;
+    padding: 15px;
+    border-radius: 4px;
+    border: none;
+}
+
+.background{
+    background: white;
+}
+
+.mostrar{
+    pointer-events: all;
+    opacity: 1;
+    animation: mostrarModal 500ms normal;
+    transform: scale(1);
+}
+
+.normal{
+    transform: unset;
+    opacity: 1;
+}
+
+.rotateImg{
+    transform: rotateY(360deg);
+}
+
+.changePosition{
+    transition: opacity 1ms;
+    opacity: 0;
+    transform: translateX(50%);
+}
+
+@keyframes changeAudio {
+    0%{
+        opacity: 0;
+        transform: translate(100%);
+    }
+
+    100%{
+        transform: unset;
+        opacity: 1;
+    }
+}
+
+
+@keyframes rorateImg{
+    0%{
+        transform: rotateY(0deg);
+    }
+    100%{
+        transform: rotateY(360deg)
+    }
+}
+
+
+
+@keyframes quitarModal {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform-origin: center center;
+    }
+    100%{
+        transform: scale(0.1);
+    }
+}
+@keyframes mostrarModal {
+    0%{
+        transform: scale(0.1);
+    }
+    50%{
+        transform-origin: center center;
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+
+
+@media (width <= 950px){
+    .overlay{
+        background: linear-gradient(180deg, rgba(8, 8, 8, 0.73) , rgba(0, 0, 0, 0.953)), url('../img/me\ gustas\ tu.jpg');
+        width: 60%;
+    }
+    
+    .container{
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .area-range-audio{
+        height: 2px;
+    }
+    .range-audio::before{
+        opacity: 1;
+    }
+
+    .modal{
+        width: 90%;
+    }
+}
+
+
+@media (max-width:500px){
+    .overlay{
+        width: 95%;
+        height: 90%;
+    }
+    .title{
+        font-size: 1rem;
+    }
+    .author{
+        font-size: 0.8rem;
+    }
+    .poster-img{
+        width: 80%;
+    }
+    .duration-play-list{
+        display: none;
+    }
+    
+}
