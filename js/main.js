@@ -108,12 +108,12 @@ const timeUpdate = (e) => {
 
 const playAudio = ()  => {
     if(audio.paused || audio.ended){
-        play.src = '../img/pause.svg'
+        play.src = './img/pause.svg'
         audio.play()
         quitarReprodudir = false
     }
     else{
-        play.src = '../img/play.svg'
+        play.src = './img/play.svg'
         audio.pause()
         quitarReprodudir = true
     }
@@ -153,14 +153,14 @@ const playingNow = () => {
 
 const start = (cancion, starting) => {
     indiceAnterior = cancion
-    audio.src = `../audio/${audios[cancion].cancion}`
+    audio.src = `./audio/${audios[cancion].cancion}`
     poster.classList.toggle('rotateImg')
-    poster.src = `../img/${audios[cancion].poster}`
+    poster.src = `./img/${audios[cancion].poster}`
     title.innerText = audios[cancion].titulo.split('.mp3').shift()
     author.innerText = audios[cancion].cantante
     dates.classList.add('changePosition')
     background.style = `
-    background: url("../img/${audios[cancion].poster}");
+    background: url("./img/${audios[cancion].poster}");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -171,7 +171,7 @@ const start = (cancion, starting) => {
     
     if(starting){
         audio.play()
-        play.src = `../img/pause.svg`
+        play.src = `./img/pause.svg`
     }  
     setTimeout(()=> {
         dates.classList.remove('changePosition')
@@ -265,18 +265,18 @@ containerButton.addEventListener('click', (e) => {
                 break
             case 'repeat':
                 randomMusicState = false
-                shuffleTag.src =  '../img/shuffle.svg'
+                shuffleTag.src =  './img/shuffle.svg'
                 repeat = !repeat
-                if(repeat) e.target.src = '../img/repeat.svg'
-                else e.target.src = '../img/noRepeat.svg'
+                if(repeat) e.target.src = './img/repeat.svg'
+                else e.target.src = './img/noRepeat.svg'
                 
                 break;
             case 'random':
                 repeat = false
-                repeatTag.src =  '../img/noRepeat.svg'
+                repeatTag.src =  './img/noRepeat.svg'
                 randomMusicState = !randomMusicState
-                if(randomMusicState) e.target.src = '../img/shuffleOn.svg'
-                else e.target.src = '../img/shuffle.svg'
+                if(randomMusicState) e.target.src = './img/shuffleOn.svg'
+                else e.target.src = './img/shuffle.svg'
                 break;
             case 'playList':
                 // widgets.classList.add('quitar')
@@ -321,13 +321,13 @@ for(let index = 0; index < audios.length; index++) {
     let element = `                            
         <div class="sound" data-index="${index}" onClick="clicked(this)">
             <div class="img-title-play-list">
-                <img src="../img/${audios[index].poster}" alt="" class="img-play-list">
+                <img src="./img/${audios[index].poster}" alt="" class="img-play-list">
                 <div>
                     <p class="title-play-list">${audios[index].titulo}</p>
                     <p class="author-play-list">${audios[index].cantante}</p>
                 </div>
             </div> 
-            <audio class="${audios[index].cancion.split('.mp3').shift()}" src="../audio/${audios[index].cancion}"></audio>
+            <audio class="${audios[index].cancion.split('.mp3').shift()}" src="./audio/${audios[index].cancion}"></audio>
             <p class="duration-play-list" id="${audios[index].cancion.split('.mp3').shift()}"></p>
     </div>`
     modalContainer.insertAdjacentHTML('beforeend', element)
