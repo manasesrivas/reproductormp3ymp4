@@ -7,8 +7,8 @@ const audios = [
     },
     {
         titulo: 'Labios compartidos',
-        cancion: 'Labios-compartidos.mp3',
-        poster: 'Labios-compartidos.jpg',
+        cancion: 'labios-compartidos.mp3',
+        poster: 'labios-compartidos.jpg',
         cantante: 'Mana'
     },
     {
